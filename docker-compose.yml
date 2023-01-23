@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web:
+    build: ./
+    ports:
+      - "8000:8501"
+    working_dir: /web
+    volumes:
+      - ./web:/web
+    command: "streamlit run streamlit_app.py"
