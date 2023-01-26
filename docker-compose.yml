@@ -1,10 +1,29 @@
 version: "3"
 services:
   web:
-    build: ./
-    ports:
-      - "8000:8501"
+    build: 
+      context: .
+      dockerfile: ./Dockerfile-web
+    networks:
+      shared-nw:
+    # ports:
+    #   - "8501:8501"
     working_dir: /web
     volumes:
       - ./web:/web
+    restart: always
     command: "streamlit run streamlit_app.py"
+  nginx:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile-nginx
+    networks:
+      shared-nw:
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx:/etc/nginx
+    restart: always
+networks:
+  shared-nw:
+    driver: bridge    
