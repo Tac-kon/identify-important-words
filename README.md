@@ -1,10 +1,13 @@
 # サイト内の主要ワード調査アプリ
 
-## 概要
+## 環境
+
+AWSへのアプリケーションデプロイの練習用プロジェクト。
+
+https://identify-important-words.com/ からアクセス可能。
+
 
 [tf-idf](https://ja.wikipedia.org/wiki/Tf-idf)の学習済みモデルを使用して、URL先のサイトの主要ワードを調査するアプリケーション。
-
-## 環境
 
 - AWS EC2
   - Ubuntu22.04のイメージを使用
@@ -48,7 +51,6 @@
 1. simple_tfidf_japaneseについて:
 
 - https://pypi.org/project/simple_tfidf_japanese/
-
 - https://qiita.com/haminiku/items/4106395b9580fbd6edf2
 
 2. AWS EC2の使用方法:
