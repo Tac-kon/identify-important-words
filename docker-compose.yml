@@ -6,8 +6,8 @@ services:
       dockerfile: ./Dockerfile-web
     networks:
       shared-nw:
-    # ports:
-    #   - "8501:8501"
+    ports:
+      - "8501:8501"
     working_dir: /web
     volumes:
       - ./web:/web
@@ -20,7 +20,7 @@ services:
     networks:
       shared-nw:
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - ./nginx:/etc/nginx
     restart: always
